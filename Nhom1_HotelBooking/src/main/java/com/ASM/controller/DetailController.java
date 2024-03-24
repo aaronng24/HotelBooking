@@ -35,7 +35,7 @@ public class DetailController {
 	
 	
 	@RequestMapping("/hotel/detail/{id}")
-	public String getDetail(@PathVariable("id")String id,Model model) {
+	public String getDetail(Model model, @PathVariable("id") String id) {
 		Hotel hotel = dao.findById(id).get();
 		session.set("hotel", hotel);
 		list=rtDAO.findRoomTypeByHotel(id);
@@ -47,7 +47,7 @@ public class DetailController {
 		Account account = (Account) session.get("useracc");
 		model.addAttribute("user",userLogin);
 		model.addAttribute("useracc", account);
-		return "layout/index";
+		return "layout/detail";
 	}
 	
 
