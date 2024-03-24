@@ -68,16 +68,16 @@ public class BookingController {
 		if (room == null) {
 			return "redirect:/hotel/detail/" + hotel.getHotelid();
 		}
-		if (userLogin == null) {
-			return "redirect:/login";
-		} else {
-			model.addAttribute("user", userLogin);
-		}
+//		if (userLogin == null) {
+//			return "redirect:/login";
+//		} else {
+//			model.addAttribute("user", userLogin);
+//		}
 		model.addAttribute("useracc", acc);
 		model.addAttribute("roomtype", rt);
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("view", "booking.jsp");
-		return "layout/index";
+		return "layout/booking";
 	}
 
 	@RequestMapping("/thanhtoan")
@@ -87,13 +87,13 @@ public class BookingController {
 		Hotel hotel = (Hotel) session.get("hotel");
 		User userLogin = (User) session.get("user");
 
-		if (userLogin == null) {
-			return "redirect:/login";
-		} else {
-			Wallet wallet = userLogin.getWallet();
-			model.addAttribute("wallet", wallet);
-			model.addAttribute("user", userLogin);
-		}
+//		if (userLogin == null) {
+//			return "redirect:/login";
+//		} else {
+//			Wallet wallet = userLogin.getWallet();
+//			model.addAttribute("wallet", wallet);
+//			model.addAttribute("user", userLogin);
+//		}
 		String from = fromDate.orElse(null);
 		String to = toDate.orElse(null);
 		LocalDate fromdate = LocalDate.parse(from);
@@ -128,7 +128,7 @@ public class BookingController {
 	public String vnPay(Model model) {
 		// System.out.println(session.get("tongtien"));
 		model.addAttribute("value", session.get("tongtien"));
-		return "user/index";
+		return "user/vnpay";
 	}
 
 	@PostMapping("/submitOrder")
