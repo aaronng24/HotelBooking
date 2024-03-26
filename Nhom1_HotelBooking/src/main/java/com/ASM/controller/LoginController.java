@@ -42,10 +42,10 @@ public class LoginController {
 	}
 
 	@PostMapping("/login")
-	public String login(Model model, @ModelAttribute("account") Account account) {
+	public String login(Model model, @RequestParam("email")String email,@RequestParam("password") String password) {
 		try {
-			String email = account.getUser().getEmail();
-			String password = account.getPassword();
+//			String email = account.getUser().getEmail();
+//			String password = account.getPassword();
 			
 			Account acc = accDao.findByEmailJPQL(email);
 			User user1 = userDao.findByEmail(email);
