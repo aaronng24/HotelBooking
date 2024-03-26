@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/static/css/footer.css}">
+</head>
+<body>
+	<div th:fragment="footer" class="container-fluid mt-5"
+		style="background-color: #1C2930; color: azure;">
+		<div class="row pt-5">
+			<!-- Cột 1 -->
+			<div class="col-md-3">
+				<div>
+					<img th:src="@{/img/logo-removebg-preview.png}" alt="" width="100%">
+				</div>
+				<p></p>
+				<p>Email: VooTreeVeeVuu@fpt.edu.vn</p>
+				<p>Điện thoại: (123) 456-7890</p>
+			</div>
+			<!-- Cột 2 -->
+			<div class="col-md-3">
+				<h5>Về chúng tôi</h5>
+				<ul class="list-unstyled">
+					<li><a th:href="@{#}">Cách đặt chỗ</a></li>
+					<li><a th:href="@{#}">Liên hệ chúng tôi</a></li>
+					<li><a th:href="@{#}">Trợ giúp</a></li>
+					<li><a th:href="@{#}">Tuyển dụng</a></li>
+					<li><a th:href="@{#}">Về chúng tôi</a></li>
+				</ul>
+				<h5>Theo dõi chúng tôi trên</h5>
+				<ul class="list-unstyled">
+					<li><a th:href="@{#}"><i class="fab fa-facebook"></i> Facebook</a></li>
+					<li><a th:href="@{#}"><i class="fab fa-twitter"></i> Twitter</a></li>
+					<li><a th:href="@{#}"><i class="fab fa-instagram"></i> Instagram</a></li>
+				</ul>
+			</div>
+			<!-- Cột 3 -->
+			<div class="col-md-3">
+				<h5>Sản phẩm</h5>
+				<ul class="list-unstyled">
+					<li><a th:href="@{#}">Khách sạn</a></li>
+					<li><a th:href="@{#}">Combo tiết kiệm</a></li>
+					<li><a th:href="@{#}">Xperience</a></li>
+					<li><a th:href="@{#}">Đưa đón sân bay</a></li>
+					<li><a th:href="@{#}">Biệt thự</a></li>
+					<li><a th:href="@{#}">Căn hộ</a></li>
+					<li><a th:href="@{#}">Car Rental</a></li>
+					<li><a th:href="@{#}">Vé xe khách</a></li>
+				</ul>
+			</div>
+			<!-- Cột 4 -->
+			<div class="col-md-3">
+				<h5>Khác</h5>
+				<ul class="list-unstyled">
+					<li><a th:href="@{#}">Affiliate</a></li>
+					<li><a th:href="@{#}">Blog</a></li>
+					<li><a th:href="@{#}">Chính Sách Quyền Riêng</a></li>
+					<li><a th:href="@{#}">Điều khoản & Điều kiện</a></li>
+					<li><a th:href="@{#}">Quy chế hoạt động</a></li>
+					<li><a th:href="@{#}">Đăng kí nơi nghỉ của bạn</a></li>
+					<li><a th:href="@{#}"></i>Đăng ký doanh nghiệp hoạt động du lịch của
+							bạn</a></li>
+					<li><a th:href="@{#}"></i>Khu vục báo chí</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
