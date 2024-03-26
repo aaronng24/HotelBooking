@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,8 +38,7 @@ public class SignupController {
 	}
 
 	@PostMapping("/signup")
-	public String register(User user, Model model, @RequestParam("password") String password,
-			@RequestParam("email") String email) {
+	public String register(@ModelAttribute("user")User user, Model model,@RequestParam("password")String password) {
 		// Kiểm tra email đã tồn tại hay chưa
 		if (userDao.existsByEmail(user.getEmail())) {
 			model.addAttribute("error", "Email đã được sử dụng!");
