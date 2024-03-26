@@ -79,7 +79,7 @@ public class ProfileController {
 		Account account = (Account) sessionService.get("useracc");
 		model.addAttribute("useracc", account);
 		model.addAttribute("user", user);
-		model.addAttribute("view", "booking.jsp");
+		/* model.addAttribute("view", "booking.jsp"); */
 		return "user/my-profile";
 	}
 
@@ -92,8 +92,8 @@ public class ProfileController {
 		Account account = (Account) sessionService.get("useracc");
 		model.addAttribute("useracc", account);
 		model.addAttribute("bookings", bkk);
-		model.addAttribute("view", "history.jsp");
-		return "user/my-profile";
+		/* model.addAttribute("view", "history.jsp"); */
+		return "user/history";
 	}
 
 	@RequestMapping("/edit-profile")
@@ -102,8 +102,8 @@ public class ProfileController {
 		Account account = (Account) sessionService.get("useracc");
 		model.addAttribute("useracc", account);
 		model.addAttribute("user", user);
-		model.addAttribute("view", "edit-profile.jsp");
-		return "user/my-profile";
+		/* model.addAttribute("view", "edit-profile.jsp"); */
+		return "user/edit-profile";
 	}
 
 	@RequestMapping("/edit-profile/update")
@@ -113,8 +113,8 @@ public class ProfileController {
 		model.addAttribute("user",user);
 		model.addAttribute("useracc",account);
 		model.addAttribute("message", "Cập nhật thành công");
-		model.addAttribute("view", "edit-profile.jsp");
-		return "user/my-profile";
+		/* model.addAttribute("view", "edit-profile.jsp"); */
+		return "user/edit-profile";
 	}
 
 	@ModelAttribute("gender")
@@ -133,8 +133,8 @@ public class ProfileController {
 		
 		model.addAttribute("user",users);
 		model.addAttribute("useracc",acc);
-		model.addAttribute("view", "pass-change.jsp");
-		return "user/my-profile";
+		/* model.addAttribute("view", "pass-change.jsp"); */
+		return "user/pass-change";
 	}
 	
 	@RequestMapping("/change")
@@ -161,8 +161,8 @@ public class ProfileController {
 		model.addAttribute("user",users);
 		model.addAttribute("useracc",acc);
 		
-		model.addAttribute("view", "pass-change.jsp");
-		return "user/my-profile";
+		/* model.addAttribute("view", "pass-change.jsp"); */
+		return "user/pass-change";
 	}
 	
 	@RequestMapping("/logout")

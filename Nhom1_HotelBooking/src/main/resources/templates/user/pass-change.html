@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/user/my-profile::dynamic(~{::body})}">
+<head>
+<meta charset="UTF-8">
+<title>Profile password change</title>
+</head>
+<body>
+<div class="card m-3">
+		<div class="card-header">
+			<h3 class="fw-bolder text-primary">
+				Đổi mật khẩu <i class="fa-regular fa-pen-to-square"></i>
+			</h3>
+		</div>
+		<div class="card-body">
+			<form class="row g-3 m-3" action="/profile/change" method="post" th:object="${useracc}">	
+				<div class="col-md-12">
+					<label class="form-label fw-bold">Mật khẩu cũ :</label> 
+					<input class="form-control" th:field="*{password}" type="password" />
+				</div>
+				<div class="col-md-12">
+					<label class="form-label fw-bold">Mật khẩu mới:</label> 
+					<input class="form-control" name="newpassword" type="password" />
+				</div>
+				<div class="col-md-12">
+					<label class="form-label fw-bold">Xác nhận mật khẩu mới:</label>
+					<input class="form-control" name="confirmpassword" type="password" />
+				</div>
+				<div class="card-footer">
+					<div class="float-end">
+						<button class="btn btn-success">Lưu</button>
+						<a th:href="@{/profile/pass-change}" class="btn btn-secondary">Huỷ</a>
+					</div>
+				</div>
+				<h5 class="text-primary" th:text="${mess}"></h5>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
