@@ -44,8 +44,8 @@ public class HomeController {
 		model.addAttribute("hotels",listWPrice);
 		model.addAttribute("user",userLogin);
 		model.addAttribute("useracc", account);
-		model.addAttribute("view","home.jsp");
-		return "layout/index";
+//		model.addAttribute("view","home.jsp");
+		return "layout/home";
 	}
 	
 	

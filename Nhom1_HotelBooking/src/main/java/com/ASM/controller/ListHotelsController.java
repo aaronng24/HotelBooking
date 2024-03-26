@@ -52,8 +52,8 @@ public class ListHotelsController {
 		model.addAttribute("cityList", getCities());
 		model.addAttribute("user", userLogin);
 		model.addAttribute("useracc", account);
-		model.addAttribute("view", "list.jsp");
-		return "layout/index";
+		/* model.addAttribute("view", "list.jsp"); */
+		return "layout/list";
 	}
 
 	private List<HotelWithPrice> listWPrice(double min, double max, int[] star) {
@@ -105,8 +105,8 @@ public class ListHotelsController {
 		model.addAttribute("cityList", getCities());
 		model.addAttribute("user", userLogin);
 		model.addAttribute("useracc", account);
-		model.addAttribute("view", "list.jsp");
-		return "layout/index";
+		/* model.addAttribute("view", "list.jsp"); */
+		return "layout/list";
 	}
 
 	@RequestMapping("/hotel/search")
@@ -124,8 +124,8 @@ public class ListHotelsController {
 		model.addAttribute("cityList", getCities());
 		model.addAttribute("user", userLogin);
 		model.addAttribute("useracc", account);
-		model.addAttribute("view", "list.jsp");
-		return "layout/index";
+		/* model.addAttribute("view", "list.jsp"); */
+		return "layout/list";
 	}
 
 	private List<HotelWithPrice> listWPriceTP(double min, double max, int[] star, String city) {

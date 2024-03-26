@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(view)">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -23,6 +23,9 @@
 </style>
 </head>
 <body>
-	<a th:href="@{|/hotel/detail/H001|}">Link</a>
+	<!--<a th:href="@{|/hotel/detail/H001|}">Link</a>-->
+	<div th:replace="~{layout/nav.html::navbar}"></div>
+	<div th:replace="${view}"></div>
+	<div th:replace="~{layout/footer.html::footer}"></div>
 </body>
 </html>
