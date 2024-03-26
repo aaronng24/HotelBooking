@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/user/my-profile::dynamic(~{::body})}">
+<head>
+<meta charset="UTF-8">
+<title>Edit Profile</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e2b57de48e.js"
+	crossorigin="anonymous"></script>
+<style>
+label {
+	margin-top: 15px;
+}
+</style>
+</head>
+<body>
+<form class="row g-3 m-3" action="/profile/edit-profile/update" method="post" th:object="${user}">
+		<div class="card mt-3">
+			<div class="card-header">
+				<h3 class="fw-bolder text-primary">
+					Thông tin cá nhân <i class="fa-regular fa-pen-to-square"></i>
+				</h3>
+			</div>
+			<div class="card-body">
+				<div class="col-12">
+					<label for="email" class="form-label fw-bold">Email:</label>
+					<input class="form-control" th:field="*{email}" readonly="true"/>
+				</div>
+				<div class="col-12">
+					<label for="firstName" class="form-label fw-bold">First Name: </label>
+					<input class="form-control" th:field="*{firstName}"  />
+				</div>
+				<div class="col-12">
+					<label for="lastName" class="form-label fw-bold">Last Name: </label>
+					<input class="form-control" th:field="*{lastName}"/>
+				</div>
+				<div class="col-6">
+					<label for="gender" class="form-label fw-bold">Gender </label><br>
+					<input type="radio" th:field="*{gender}" class="form-check-inline ms-3" value= "Nam"  ${user.gender=='Nam'?'checked':'' }/> Nam
+					<input type="radio" th:field="*{gender}" class="form-check-inline ms-3" value= "Nữ" ${user.gender=='Nữ'?'checked':'' }/> Nữ
+					<input type="radio" th:field="*{gender}" class="form-check-inline ms-3" value= "Khác" ${user.gender=='Khác'?'checked':'' }/> Khác
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<label for="phoneNum" class="form-label fw-bold">Phone Number: </label>
+						<input class="form-control" th:field="*{phoneNum}" />
+					</div>
+					<div class="col-6">
+						<label for="birthdate" class="form-label fw-bold">Birth date: </label>
+						<input class="form-control" th:field="*{birthdate}" />
+					</div>
+				</div>
+				<h3 th:text="${message}"></h3>
+			</div>
+			<div class="card-footer">
+				<div class="float-end">
+					<button type="submit" class="btn btn-success">Lưu</button>
+					<a th:href="@{/profile/edit-profile}" class="btn btn-secondary">Huỷ</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
