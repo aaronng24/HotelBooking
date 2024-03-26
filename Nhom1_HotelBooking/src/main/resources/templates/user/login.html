@@ -30,7 +30,7 @@ label {
 
 
 </head>
-<body >
+<body>
 	<div class="container">
 		<a href="/home"><img th:src="@{/img/VooTreeVeeVuuLogo.png}" alt=""
 			style="margin-top: 30px; width: 30%;"></a>
@@ -38,22 +38,23 @@ label {
 			<div class="col-8"></div>
 			<div class="col-4 p-4"
 				style="height: auto; background-color: white; border-radius: 15px; border: 1px solid gray;">
-				<form class="form" method="post" th:object="${account}">
+				<form class="form" method="post" >
 					<h3 class="fw-bold">Đăng nhập tài khoản</h3>
 					<div class="mb-2">
 						<b class="text-danger"><i th:text="${message}"></i></b>
 					</div>
-					<label for="" class="form-label mt-4">Email</label> <input
-						type="email" th:field="*{user.email}" id="" class="form-control"> <label
-						for="" class="form-label mt-3">Mật khẩu</label> <a
-						class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover float-end mt-3 pt-1"
-						href="/forgotpass" style="font-size: 14px;"> Quên mật khẩu? </a> <input
-						type="password" th:field="*{password}" id="" class="form-control">
+					<label for="" class="form-label mt-4">Email</label> 
+					<input type="email" name="email" id="" class="form-control">
+					<label for="" class="form-label mt-3">Mật khẩu</label> 
+					<a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover float-end mt-3 pt-1"
+						href="/forgotpass" style="font-size: 14px;"> Quên mật khẩu? </a> 
+					<input type="password" name="password" id="" class="form-control">
 					<br>
 					<div class="row">
 						<div class="col-4 mt-2 ">
 							<!-- <a href="/login" class="btn btn-danger">Đăng nhập</a> -->
-							<button type="submit" th:formaction="@{|/login|}" class="btn btn-danger">Login</button>
+							<button type="submit" th:formaction="@{|/login|}"
+								class="btn btn-danger">Login</button>
 						</div>
 						<div class="col-6">
 							<strong style="font-size: 14px;">Bạn chưa có tài khoản?</strong>
