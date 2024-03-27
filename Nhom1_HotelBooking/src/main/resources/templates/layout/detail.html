@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="~{/layout/index::dynamic(~{::body})}">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -23,7 +24,7 @@
 </style>
 </head>
 <body>
-	<!-- <div th:insert="~{/layout/findingBar.html :: findingBar}"></div> -->
+	 <div th:insert="~{/layout/findingBar.html :: findingBar}"></div>  
 	<div class="container">
 		<div class="row align-items-start mt-4">
 			<div class="col-sm-9" th:object="${hotel}">

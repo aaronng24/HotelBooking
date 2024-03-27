@@ -64,15 +64,13 @@ public class BookingController {
 		if (hotel == null) {
 			return "redirect:/hotel/list";
 		}
-		Room room = rDAO.getAvailableRoom(hotel.getHotelid(), rt.getTypeid());
-		if (room == null) {
-			return "redirect:/hotel/detail/" + hotel.getHotelid();
+		//Room room = rDAO.getAvailableRoom(hotel.getHotelid(), rt.getTypeid());
+	
+		if (userLogin == null) {
+			return "redirect:/login";
+		} else {
+			model.addAttribute("user", userLogin);
 		}
-//		if (userLogin == null) {
-//			return "redirect:/login";
-//		} else {
-//			model.addAttribute("user", userLogin);
-//		}
 		model.addAttribute("useracc", acc);
 		model.addAttribute("roomtype", rt);
 		model.addAttribute("hotel", hotel);
@@ -87,13 +85,13 @@ public class BookingController {
 		Hotel hotel = (Hotel) session.get("hotel");
 		User userLogin = (User) session.get("user");
 
-//		if (userLogin == null) {
-//			return "redirect:/login";
-//		} else {
-//			Wallet wallet = userLogin.getWallet();
-//			model.addAttribute("wallet", wallet);
-//			model.addAttribute("user", userLogin);
-//		}
+		if (userLogin == null) {
+			return "redirect:/login";
+		} else {
+			Wallet wallet = userLogin.getWallet();
+			model.addAttribute("wallet", wallet);
+			model.addAttribute("user", userLogin);
+		}
 		String from = fromDate.orElse(null);
 		String to = toDate.orElse(null);
 		LocalDate fromdate = LocalDate.parse(from);

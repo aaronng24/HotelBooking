@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel-item img {
+	height: 600px;
+	/* Đặt chiều cao mong muốn cho tất cả các ảnh trong carousel */
+	object-fit: cover;
+	/* Đảm bảo ảnh không bị biến dạng khi chỉnh kích thước */
+	filter: brightness(60%);
+	/* Độ mờ - giảm độ sáng của ảnh */
+}
+
+.card a {
+	color: inherit;
+	/* Kế thừa màu chữ từ phần tử cha */
+	text-decoration: none;
+	/* Bỏ gạch chân mặc định của thẻ a */
+}
+
+/* CSS tùy chỉnh cho hai card đầu tiên */
+.custom-row-location .col:nth-child(-n+2) {
+	/* Chiếm 50% chiều rộng của parent (2 card mỗi dòng) */
+	flex: 0 0 50%;
+}
+
+.custom-row-location .col:nth-child(-n+2) img {
+	/* max-width: 50%; Chiều rộng tối đa là 50% */
+	max-height: 300px !important;
+	object-fit: cover;
+}
+
+.list-unstyled a {
+	text-decoration: none;
+	color: grey;
+	line-height: 2;
+}
+
+.card-hotel {
+	transition: transform 0.3s; /* Add a smooth transition effect */
+}
+
+.card-hotel:hover {
+	transform: scale(1.05); /* Scale the card on hover */
+}
+
+.prod-link {
+	position: relative;
+}
+
+.img-text{
+	position: absolute;
+	bottom: 0%;
+	width: auto;
+	left: 0;
+	margin-left: 35px;
+	background-image: linear-gradient(to top, transparent, transparent);
+	color: #fff;
+	padding: 10px;
+	transition: bottom 0.4s ease-in-out;
+	opacity: 0;
+	word-spacing: 2px;
+	background-image: linear-gradient(to top, transparent, transparent);
+	font-weight: bold;
+}
+
+.prod-link:hover .img-prod {
+	filter: blur(20px);
+}
+
+.prod-link:hover .img-text {
+	bottom: 100px;
+	opacity: 1;
+}
