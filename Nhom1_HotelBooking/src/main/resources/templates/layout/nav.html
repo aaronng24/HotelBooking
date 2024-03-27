@@ -41,7 +41,7 @@
 						aria-current="page" th:href="@{/hotel/list}">Danh Sách Khách Sạn</a></li>
 				</ul>
 				<form class="d-grid gap-2 d-md-flex justify-content-md-end">
-					<div th:if="${user == null or user.isEmpty()}">
+					<div th:if="${user == null}">
 						<a th:href="@{/login}" class="btn btn-outline-secondary" type="submit">
 							<i class="fa-solid fa-user" style="color: #74C0FC;"></i> Đăng
 							Nhập
