@@ -63,14 +63,14 @@
 					data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <i
 						class="fas fa-fw fa-cog"></i><span>CRUD</span>
 				</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Các loại phần:</h6>
-						<a class="collapse-item" th:href="@{/admin/hotel}">Khách sạn</a> <a class="collapse-item"
-							th:href="@{/admin/room}">Phòng</a> <a class="collapse-item"
-							th:href="@{/admin/roomtype}">Loại phòng</a>
-					</div>
-				</div>
+				<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+		            <div class="bg-white py-2 collapse-inner rounded">
+		                <h6 class="collapse-header">Các loại phần:</h6>
+		                <a class="collapse-item active" th:href="@{/admin/hotel}">Khách sạn</a>
+		                <a class="collapse-item" th:href="@{/admin/room}">Phòng</a>
+		                <a class="collapse-item" th:href="@{/admin/roomtype}">Loại phòng</a>
+		            </div>
+		        </div>
 			</li>
 
 			<!-- Nav Item - Utilities Collapse Menu -->

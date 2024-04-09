@@ -140,12 +140,12 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link" th:href="@{/profile/edit-profile}">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welcome,<span class="text-primary" ></span></span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welcome,<span class="text-primary"th:text="${user.lastName +' '+ user.firstName}" ></span></span>
                     </a>
                 </li>
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link text-danger" href="">Logout</a>
+                    <a class="nav-link text-danger" href="/logout">Logout</a>
                 </li>
             </ul>
 
