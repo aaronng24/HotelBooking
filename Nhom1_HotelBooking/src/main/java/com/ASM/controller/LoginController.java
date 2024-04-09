@@ -36,44 +36,19 @@ public class LoginController {
 	@Autowired
 	SessionService session;
 
-	@GetMapping("/login")
+	@RequestMapping("/login")
 	public String login() {
 		return "user/login";
 	}
 
-	@PostMapping("/login")
-	public String login(Model model, @RequestParam("email")String email,@RequestParam("password") String password) {
-		try {
-//			String email = account.getUser().getEmail();
-//			String password = account.getPassword();
-			
-			Account acc = accDao.findByEmailJPQL(email);
-			User user1 = userDao.findByEmail(email);
-			if (acc == null || !acc.getPassword().equals(password) || user1.equals("Inactive")) {
-				model.addAttribute("message", "Sai thông tin đăng nhập!");
-			} else {
-				User user = userDao.findByEmail(email);
-				session.set("user", user);
-				session.set("useracc", acc);
-				model.addAttribute("user", user);
-//				String uri = (String) session.get("security-uri");
-//				if (uri != null) {
-//					return "redirect:" + uri;
-//					//return "admin/themxoasua"; // sua
-//				} else {					
-//					model.addAttribute("message", "Login succeed");
-//					return "admin/home";
-//				}
-				return "redirect:/home";
-			}
-		} catch (Exception e) {
-			model.addAttribute("message", "Lỗi");
-			e.printStackTrace();
-		}
-		return "user/login";
+	
+	@RequestMapping("/login/success")
+	public String loginSuccess(Model model) {
+		model.addAttribute("message","Đăng nhập thành công!");
+		return "redirect:/home";
 	}
 
-	@GetMapping("/logout")
+	@RequestMapping("/logout")
 	public String accountLogout() {
 		User userLogin = (User) session.get("user");
 		if (userLogin != null)
@@ -81,5 +56,23 @@ public class LoginController {
 			session.set("useracc", null);
 		return "redirect:/home";
 	}
+	
+	@RequestMapping("/security/login/error")
+	public String loginError(Model model) {
+		model.addAttribute("message","Sai thông tin đăng nhập!");
+		return "user/login";
+	}
+	
+	@RequestMapping("/security/unauthoried")
+	public String unauthoried(Model model) {
+		model.addAttribute("message","Không có quyền truy xuất!");
+		return "user/login";
+	}
+	@RequestMapping("/security/logoff/success")
+	public String logoffSuccess(Model model) {
+		model.addAttribute("message","Bạn đã đăng xuất!");
+		return "user/login";
+	}
+
 
 }

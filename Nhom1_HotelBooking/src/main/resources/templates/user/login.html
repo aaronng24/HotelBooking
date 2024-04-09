@@ -38,7 +38,7 @@ label {
 			<div class="col-8"></div>
 			<div class="col-4 p-4"
 				style="height: auto; background-color: white; border-radius: 15px; border: 1px solid gray;">
-				<form class="form" method="post" >
+				<form th:action="@{/security/login}" class="form" method="post" >
 					<h3 class="fw-bold">Đăng nhập tài khoản</h3>
 					<div class="mb-2">
 						<b class="text-danger"><i th:text="${message}"></i></b>
@@ -53,7 +53,7 @@ label {
 					<div class="row">
 						<div class="col-4 mt-2 ">
 							<!-- <a href="/login" class="btn btn-danger">Đăng nhập</a> -->
-							<button type="submit" th:formaction="@{|/login|}"
+							<button type="submit" 
 								class="btn btn-danger">Login</button>
 						</div>
 						<div class="col-6">
