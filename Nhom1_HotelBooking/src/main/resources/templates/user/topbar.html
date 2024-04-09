@@ -56,13 +56,13 @@
 						<a th:href="@{/signup}" class="btn btn-primary" type="submit">Đăng Ký</a>
 					</div>
 					<div th:if="${user != null}">
-					<div th:if="${useracc.role}">
+					<div th:if="${useracc.role == 'ADMIN'}">
 						<a th:href="@{/profile/edit-profile}" class="btn btn-outline-primary" type="submit"
 							th:text="'Xin chào, ' + ${user.lastName} + ' ' + ${user.firstName} + '!'"></a>
 						<a th:href="@{/admin/index}" class="btn btn-outline-success">Quản lý</a>
 						<a th:href="@{/logout}" class="btn btn-outline-danger" type="submit">Đăng Xuất</a>
 					</div>
-					<div th:if="${!useracc.role}">
+					<div th:if="${useracc.role=='USER'}">
 						<a th:href="@{/profile/edit-profile}" class="btn btn-outline-primary" type="submit"
 							th:text="'Xin chào, ' + ${user.lastName} + ' ' + ${user.firstName} + '!'"></a>
 						<a th:href="@{/logout}" class="btn btn-outline-danger" type="submit">Đăng Xuất</a>
