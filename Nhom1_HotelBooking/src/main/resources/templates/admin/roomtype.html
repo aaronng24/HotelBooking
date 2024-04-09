@@ -25,7 +25,7 @@
     </style>
     <script src="https://kit.fontawesome.com/e2b57de48e.js" crossorigin="anonymous"></script>
 </head>
-< <body id="page-top">
+<body id="page-top">
     <div id="wrapper">
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -57,15 +57,14 @@
                     data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <i
                         class="fas fa-fw fa-cog"></i><span>CRUD</span>
                 </a>
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Các loại phần:</h6>
-                        <a class="collapse-item" href="/admin/hotel">Khách sạn</a> <a class="collapse-item"
-                            href="/admin/room">Phòng</a> <a class="collapse-item active" href="/admin/roomtype">Loại
-                            phòng</a>
-                    </div>
-                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+		            <div class="bg-white py-2 collapse-inner rounded">
+		                <h6 class="collapse-header">Các loại phần:</h6>
+		                <a class="collapse-item active" th:href="@{/admin/hotel}">Khách sạn</a>
+		                <a class="collapse-item" th:href="@{/admin/room}">Phòng</a>
+		                <a class="collapse-item" th:href="@{/admin/roomtype}">Loại phòng</a>
+		            </div>
+		        </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -127,7 +126,7 @@
 										th:text="${user.lastName +' '+ user.firstName}"></span></span></span>
                             </a></li>
                         <div class="topbar-divider d-none d-sm-block"></div>
-                        <li class="nav-item dropdown no-arrow"><a class="nav-link text-danger" href="">Logout</a></li>
+                        <li class="nav-item dropdown no-arrow"><a class="nav-link text-danger" href="/logout">Logout</a></li>
                     </ul>
                 </nav>
                 <!-- End of Topbar -->

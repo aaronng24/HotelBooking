@@ -141,7 +141,7 @@
 								</span></span> </a></li>
 						<div class="topbar-divider d-none d-sm-block"></div>
 						<li class="nav-item dropdown no-arrow"><a
-							class="nav-link text-danger" href="">Logout</a></li>
+							class="nav-link text-danger" href="/logout">Logout</a></li>
 					</ul>
 
 				</nav>
@@ -184,7 +184,7 @@
 										<td>[[${room.roomType.typeName}]]</td>
 										<td>[[${room.status}]]</td>
 										<td><a type="button" class="btn btn-primary btn-sm"
-											href="/admin/room/edit/${room.roomID}"> Edit </a>
+											th:href="@{|/admin/room/edit/${room.roomID}|}"> Edit </a>
 									</tr>
 
 								</tbody>
