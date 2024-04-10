@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/admin/index::dynamic(~{::body})}">
+
+<body ng-app="room-app" ng-controller="room-ctrl">
+	<ul class="nav nav-tabs" style="font-variant: small-caps;">
+		<li class="nav-item"><a class="nav-link" data-target="#edit"
+			id="edit-tab" data-bs-toggle="tab" href="#edit" role="tab"
+			aria-controls="edit" aria-selected="false">Form</a></li>
+		<li class="nav-item"><a class="nav-link active" id="list-tab"
+			data-bs-toggle="tab" href="#list" role="tab" aria-controls="list"
+			aria-selected="true">List</a></li>
+	</ul>
+	<div class="tab-content" >
+		<div class="tab-pane fade" id="edit" role="tabpanel"
+			aria-labelledby="edit-tab">
+			<div ng-include="'/admin/room/room-form.html'"></div>
+		</div>
+		<div class="tab-pane fade show active" id="list" role="tabpanel"
+			aria-labelledby="list-tab">
+			<div ng-include="'/admin/room/room.html'"></div>
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/room.js"></script>
+</body>
+</html>

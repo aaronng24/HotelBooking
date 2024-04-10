@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body id="page-top">
+	<div class="ps-3 pe-3">
+		<div class="w-100" style="height: auto;">
+			<div class="col-6">
+				<h4 class="fw-bold">THÔNG TIN PHÒNG</h4>
+			</div>
+			<div class="row p-4 m-4 mt-4" style="background-color: white; border-radius: 15px;">
+				<form class="row g-3" method="post">
+					<div class="col-md-4">
+						<label for="roomID" class="form-label fw-bold">Room ID:</label> <input class="form-control"
+							ng-model="form.roomID" />
+					</div>
+					<div class="col-md-4">
+						<label for="roomTypeName" class="form-label fw-bold">RoomType:</label> 
+						<select class="form-control" id="roomType" name="roomType" ng-model="form.roomType.typeid">
+							<option th:each="roomType : ${typeList}" th:value="${roomType.typeid}"
+								th:text="${roomType.typeName}"></option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label class="form-label fw-bold">Status:</label><br> <select class="form-select"
+							ng-model="form.status">
+							<option ng-value="Available">Available</option>
+							<option ng-value="Inactive">Inactive</option>
+							<option ng-value="Booked">Booked</option>
+						</select>
+					</div>
+					<div class="col-md-12">
+						<label for="hotelName" class="form-label fw-bold">Hotel Name:</label> <select
+							class="form-control" id="roomType" name="roomType" ng-model="form.hotel.hotelid">
+							<option th:each="hotel : ${hotels}" th:value="${hotel.hotelid}" th:text="${hotel.hotelName}"></option>
+						</select>
+					</div>
+					<div class="col-12">
+						<div class="alert alert-warning" role="alert" th:text="${message}"></div>
+					</div>
+					<div class="col-12">
+						<button type="submit" class="btn btn-primary float-end" ng-click="create()">Save</button>
+						<button type="reset" class="btn btn-secondary float-end me-2" ng-click="reset()">Reset</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

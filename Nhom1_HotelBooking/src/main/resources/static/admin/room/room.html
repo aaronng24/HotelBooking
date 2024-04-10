@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Content -->
+	<div class="ps-3 pe-3">
+		<div class="w-100"
+			style="background-color: #3959AB; border-radius: 15px; height: 700px; margin-top: 30px;">
+			<nav class="navbar">
+				<div class="container-fluid">
+					<a class="navbar-brand"
+						style="margin-left: 50px; font-size: 30px; color: white; font-weight: bold;">Danh sách
+						phòng</a>
+					<form class="d-flex" role="search" style="margin-right: 50px;">
+						<input class="form-control me-2" style="width: 400px" type="search"
+							placeholder="Nhập loại phòng hoặc tên khách sạn" aria-label="Search" ng-model="find">
+						<button class="btn btn-outline-light" type="submit" ng-click="findRoom(find)">Search</button>
+					</form>
+				</div>
+			</nav>
+			<div class="row mt-4 p-4 m-4" style="background-color: white; border-radius: 15px;">
+				<table class="table table-striped" style="height: 278px;">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Khách sạn</th>
+							<th scope="col">Loại phòng</th>
+							<th scope="col">Trạng thái</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="room in pager.rooms">
+							<th scope="row">{{room.roomID}}</th>
+							<td>{{room.hotel.hotelName}}</td>
+							<td>{{room.roomType.typeName}}</td>
+							<td>{{room.status}}</td>
+							<td><a type="button" class="btn btn-primary btn-sm" ng-click="edit(room)"> Edit </a>
+						</tr>
+					</tbody>
+				</table>
+				<div class="d-flex justify-content-center mt-3">
+					<div class="card-footer text-center">
+						<button class="btn btn-danger" ng-click="pager.first()"><<</button>
+						<button class="btn btn-primary" ng-click="pager.previous()">Prev</button>
+						<button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
+						<button class="btn btn-primary" ng-click="pager.next()">
+							<b class="glyphicon glyphicon-hand-right">></b>
+						</button>
+						<button class="btn btn-danger" ng-click="pager.last()">
+							<b class="glyphicon glyphicon-hand-down">>></b>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<a class="btn btn-danger float-end me-4" href="/admin/room-form">Thêm mới</a> <a
+						href="/admin/room" class="btn btn-outline-light float-end me-2">Reset</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
