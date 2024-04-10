@@ -58,7 +58,7 @@
                                 </thead>
                                 <tbody>
                                     
-                                        <tr ng-repeat="roomtype in roomtypes">
+                                        <tr ng-repeat="roomtype in pager.roomtypes">
                                             <th scope="row">{{roomtype.typeid}}</th>
                                             <td>{{roomtype.typeName}}</td>
                                             <td>
@@ -72,7 +72,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-center mt-3">
-								<ul class="pagination" th:if="${totalPages > 1}">
+								<!-- <ul class="pagination" th:if="${totalPages > 1}">
 									<li class="page-item"><a class="page-link"
 										th:href="@{/admin/roomtype(page=0, keyword=${keyword})}">First</a>
 									</li>
@@ -92,7 +92,20 @@
 										th:href="@{/admin/roomtype(page=${totalPages -1}, keyword=${keyword})}">Last</a>
 									</li>
 								</ul>
-							</div>
+							</div> -->
+							<div class="card-footer text-center">
+		<button class="btn btn-danger" ng-click="pager.first()">
+			<<
+		</button>
+		<button class="btn btn-primary" ng-click="pager.previous()">Prev</button>
+		<button class="btn btn-success">{{pager.page + 1}} of {{pager.count}} </button>
+		<button class="btn btn-primary" ng-click="pager.next()">
+			<b class="glyphicon glyphicon-hand-right">></b>
+		</button>
+		<button class="btn btn-danger"ng-click="pager.last()">
+			<b class="glyphicon glyphicon-hand-down">>></b>
+		</button>
+	</div>
                         </div>
                         <div class="row">
                             <div class="col">
