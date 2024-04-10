@@ -3,6 +3,8 @@ package com.ASM.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -44,6 +46,7 @@ public class Hotel implements Serializable{
 	@Column(name="description",columnDefinition = "nvarchar(250)",nullable = true)
 	@Size(min = 5, message="{size.hotel.description}")
 	String description;
+	@JsonIgnore
 	@OneToMany (mappedBy = "hotel")
 	List<Room> rooms;
 }

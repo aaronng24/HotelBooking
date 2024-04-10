@@ -2,6 +2,8 @@ package com.ASM.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,6 +28,7 @@ public class Room {
 	Hotel hotel;
 	@ManyToOne @JoinColumn(name="typeid")
 	RoomType roomType;
+	@JsonIgnore
 	@OneToMany (mappedBy = "room")
 	List<Booking> bookings;
 }

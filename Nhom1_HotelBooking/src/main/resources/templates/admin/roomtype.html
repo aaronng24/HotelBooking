@@ -25,7 +25,7 @@
     </style>
     <script src="https://kit.fontawesome.com/e2b57de48e.js" crossorigin="anonymous"></script>
 </head>
-<body id="page-top">
+<body id="page-top" ng-app="roomtype-app" ng-controller="roomtype-ctrl">
    
 
                 <!-- Content -->
@@ -58,15 +58,15 @@
                                 </thead>
                                 <tbody>
                                     
-                                        <tr th:each="roomtype:${roomTypes}">
-                                            <th scope="row">[[${roomtype.typeid}]]</th>
-                                            <td>[[${roomtype.typeName}]]</td>
+                                        <tr ng-repeat="roomtype in roomtypes">
+                                            <th scope="row">{{roomtype.typeid}}</th>
+                                            <td>{{roomtype.typeName}}</td>
                                             <td>
-                                                [[${roomtype.price}]]
+                                                {{roomtype.price}}
                                             </td>
-                                            <td>[[${roomtype.capacity}]]</td>
+                                            <td>{{roomtype.capacity}}</td>
                                             <td><a type="button" class="btn btn-primary btn-sm"
-                                                    th:href="@{|/admin/roomtype/edit/${roomtype.typeid}|}">Edit</a>
+                                                    href="/admin/roomtype/edit/{roomtype.typeid}">Edit</a>
                                         </tr>
                                    
                                 </tbody>
@@ -104,6 +104,8 @@
                 </div>
    
     <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -112,6 +114,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/css/sb-admin-2.min.js"></script>
+    <script src="/js/roomtype.js"></script>
     </body>
 
 </html>

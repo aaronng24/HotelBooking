@@ -64,7 +64,7 @@ public class AdminController {
 		model.addAttribute("listData",listdata);
 		model.addAttribute("listHotel",listHotel);
 		model.addAttribute("user", user);
-		return "admin/index";
+		return "admin/thongke-theoKS";
 	}
  
 	@ExceptionHandler({DatabaseConnectionException.class})

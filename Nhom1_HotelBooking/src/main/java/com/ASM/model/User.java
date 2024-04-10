@@ -3,6 +3,8 @@ package com.ASM.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -34,10 +36,13 @@ public class User {
 	@Column(name="birthdate")
 	LocalDate birthdate;
 	String status = "Active";
+	@JsonIgnore
 	@OneToOne (mappedBy = "user")
 	Wallet wallet;
+	@JsonIgnore
 	@OneToOne(mappedBy = "user")
 	Account account;
+	@JsonIgnore
 	@OneToMany (mappedBy = "user")
 	List<Booking> bookings;
 	

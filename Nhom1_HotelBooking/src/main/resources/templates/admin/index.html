@@ -37,7 +37,7 @@
 		<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/admin/index}">
+			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
@@ -48,7 +48,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active"><a class="nav-link" th:href="@{/admin/index}"> <i
+			<li class="nav-item active"><a class="nav-link" href="#"> <i
 						class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a></li>
 
@@ -66,7 +66,7 @@
 				<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 		            <div class="bg-white py-2 collapse-inner rounded">
 		                <h6 class="collapse-header">Các loại phần:</h6>
-		                <a class="collapse-item active" th:href="@{/admin/hotel}">Khách sạn</a>
+		                <a class="collapse-item" th:href="@{/admin/hotel}">Khách sạn</a>
 		                <a class="collapse-item" th:href="@{/admin/room}">Phòng</a>
 		                <a class="collapse-item" th:href="@{/admin/roomtype}">Loại phòng</a>
 		            </div>
@@ -146,7 +146,8 @@
 	</div>
 
 	
-
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
 	<!-- Bootstrap core JavaScript-->
 	<script src="/vendor/jquery/jquery.min.js"></script>
 	<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

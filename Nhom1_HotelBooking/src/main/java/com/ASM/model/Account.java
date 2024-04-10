@@ -1,5 +1,7 @@
 package com.ASM.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +24,7 @@ public class Account {
 	Integer id;
 	String password;
 	String role;
+	@JsonIgnore
 	@OneToOne @JoinColumn(name = "email")
 	User user;
 	public Account(String password, String role, User user) {

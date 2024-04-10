@@ -15,4 +15,6 @@ public interface RoomTypeDAO extends JpaRepository<RoomType, String>{
 	
 	@Query(value = "SELECT rt.typeid,rt.capacity,rt.description,rt.image,rt.price,rt.typename FROM room_type rt INNER JOIN rooms r ON rt.typeid = r.typeid INNER JOIN hotels h ON r.hotelid = h.hotelid WHERE h.hotelid = ?1", nativeQuery = true)
 	List<RoomType> findRoomTypeByHotel(String hotelid);
+	
+	
 }
