@@ -84,12 +84,12 @@ public class AdminController {
 	@RequestMapping("/thongke-theoKS")
 	public String thongKeDoanhThuTheoKS(Model model,@RequestParam(required = false,name="hotelName")String hotelID) {
 		User user = (User) sessionService.get("user");
-		Hotel choosedHotel = hotelDAO.findByHotelid(hotelID);
+		//Hotel choosedHotel = hotelDAO.findByHotelid(hotelID);
 		List<Hotel> listHotel= hotelDAO.findAll();
-		List<Double> dataByHotelID= bkDAO.takePriceByHotel(hotelID);
-		model.addAttribute("choosedHotel", choosedHotel);
+		//List<Double> dataByHotelID= bkDAO.takePriceByHotel(hotelID);
+		//model.addAttribute("choosedHotel", choosedHotel);
 		model.addAttribute("listHotel",listHotel);
-		model.addAttribute("listDataByHotel",dataByHotelID);
+		//model.addAttribute("listDataByHotel",dataByHotelID);
 		model.addAttribute("user", user);
 		return "admin/thongke-theoKS";
 	}
