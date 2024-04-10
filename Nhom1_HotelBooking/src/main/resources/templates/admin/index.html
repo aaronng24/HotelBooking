@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(viewAdmin)">
 
 <head>
 	<meta charset="UTF-8">
@@ -140,102 +140,12 @@
 					</ul>
 
 				</nav>
-				<!-- End of Topbar -->
-
-				<!-- Content -->
-				<!--<div class="container">
-					<canvas id="myChart"></canvas>
-				</div>-->
-				<!-- End content -->
+				<div th:replace="${viewAdmin}" style="width:100%"></div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Script chart -->
-	<!--	<script>
-		let myChart = document.getElementById('myChart').getContext('2d');
-		// Global Options
-		Chart.defaults.global.defaultFontFamily = 'Lato';
-		Chart.defaults.global.defaultFontSize = 18;
-		Chart.defaults.global.defaultFontColor = '#777';
-		
-
-		let massPopChart = new Chart(myChart, {
-			type :'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-			data : {
-				labels : [ 'Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12' ],
-				datasets : [ {
-					label : 'Doanh thu',
-					data : ${listData},
-					//backgroundColor:'green',
-					backgroundColor : [ 'rgba(255, 99, 132, 0.6)',
-							'rgba(54, 162, 235, 0.6)',
-							'rgba(255, 206, 86, 0.6)',
-							'rgba(75, 192, 192, 0.6)',
-							'rgba(153, 102, 255, 0.6)',
-							'rgba(255, 159, 64, 0.6)',
-							'rgba(255, 99, 132, 0.6)' ],
-					borderWidth : 1,
-					borderColor : '#777',
-					hoverBorderWidth : 3,
-					hoverBorderColor : '#000',
-				} ]
-			},
-			options : {
-				scales : {
-					yAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: true,
-                            steps: 100000,
-                            callback: function (value, index, values) {
-                                // Format the tick value using the formatCurrency function
-                                return formatCurrency(value);
-                            }
-                        }
-                    }]	
-				},
-				title : {
-					display : true,
-					text : 'Tổng doanh thu theo tháng',
-					fontSize : 25
-				},
-				legend : {
-					display : true,
-					position : 'right',
-					labels : {
-						fontColor : '#000'
-					}
-				},
-				layout : {
-					padding : {
-						left : 50,
-						right : 0,
-						bottom : 0,
-						top : 0
-					}
-				},
-				tooltips : {
-					enabled : true,
-					callbacks: {
-				        label: function (tooltipItem, data) {
-				            let label = data.labels[tooltipItem.index] || '';
-				            let value = tooltipItem.yLabel;
-				            
-				            // Format the label and tooltip value using the formatCurrency function
-				            return ' ' + formatCurrency(value);
-				        }
-				    }
-				}
-			}
-		});
-		function formatCurrency(value) {
-		    // Format value as currency (VND)
-		    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
-		}
-	</script>-->
-
-	<!-- End script chart -->
+	
 
 	<!-- Bootstrap core JavaScript-->
 	<script src="/vendor/jquery/jquery.min.js"></script>
