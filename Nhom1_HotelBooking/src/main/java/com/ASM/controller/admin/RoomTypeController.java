@@ -32,20 +32,20 @@ public class RoomTypeController {
 			@RequestParam(name = "keyword", defaultValue = "") String keyword) {
 		RoomType roomType = new RoomType();
 		model.addAttribute("roomType", roomType);
-		Pageable pageable = PageRequest.of(page, 5);
-		Page<RoomType> RTpage;
-		if (keyword.isEmpty()) {
-			RTpage = roomTypeDAO.findAll(pageable);
-		} else {
-			RTpage = roomTypeDAO.findByTypeName("%" + keyword + "%", pageable);
-		}
+//		Pageable pageable = PageRequest.of(page, 5);
+//		Page<RoomType> RTpage;
+//		if (keyword.isEmpty()) {
+//			RTpage = roomTypeDAO.findAll(pageable);
+//		} else {
+//			RTpage = roomTypeDAO.findByAllTypeName("%" + keyword + "%");
+//		}
 		User user = (User) sessionService.get("user");
 		model.addAttribute("user", user);
-		model.addAttribute("page", RTpage);
-		model.addAttribute("roomTypes", RTpage.getContent());
-	    model.addAttribute("currentPage", page);
-	    model.addAttribute("totalPages", RTpage.getTotalPages());
-		model.addAttribute("keyword", keyword);
+//		model.addAttribute("page", RTpage);
+//		model.addAttribute("roomTypes", RTpage.getContent());
+//	    model.addAttribute("currentPage", page);
+//	    model.addAttribute("totalPages", RTpage.getTotalPages());
+//		model.addAttribute("keyword", keyword);
 		return "admin/roomtype/roomtype_index";
 	}
 

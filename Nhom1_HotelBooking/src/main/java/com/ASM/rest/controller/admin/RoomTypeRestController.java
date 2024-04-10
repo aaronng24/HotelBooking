@@ -28,12 +28,7 @@ public class RoomTypeRestController {
 	public List<RoomType> getAll(){
 		return roomTyperRestService.findAll();
 	}
-	
-	@GetMapping("{id}")
-	public RoomType getOne(@PathVariable("id")String id){
-		return roomTyperRestService.findById(id);
-	}
-	
+		
 	@PostMapping
 	public RoomType create(@RequestBody RoomType roomtype ) {
 		return roomTyperRestService.create(roomtype);
@@ -44,4 +39,11 @@ public class RoomTypeRestController {
 		roomTyperRestService.delete(id);
 	}
 	
+	@GetMapping("{name}")
+	public List<RoomType> getAllByName(@PathVariable("name")Optional<String> name){
+		if(name.isEmpty()) {
+			return roomTyperRestService.findAll();
+		}
+		return roomTyperRestService.findAllByTypeName(name);
+	}
 }

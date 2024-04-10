@@ -6,12 +6,18 @@ app.controller("roomtype-ctrl", function($scope, $http) {
 	$scope.initialize = function() {
 		$http.get("/rest/roomtypes").then(resp => {
 			$scope.roomtypes = resp.data;
-			console.log($scope.roomtypes);
 		});
 	}
 
 	//Khoi dau
 	$scope.initialize();
+	
+	$scope.findRT=function(find){
+		$http.get(`/rest/roomtypes/${find}`).then(resp=>{
+			$scope.roomtypes=resp.data;
+		})
+	}
+	
 	
 	$scope.edit = function(roomtype) {
 		$scope.form = angular.copy(roomtype);

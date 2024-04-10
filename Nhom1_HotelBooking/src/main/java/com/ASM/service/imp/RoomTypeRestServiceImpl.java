@@ -1,6 +1,7 @@
 package com.ASM.service.imp;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,10 @@ public class RoomTypeRestServiceImpl implements RoomTyperRestService {
 	public void delete(String id) {
 		rdao.deleteById(id);
 		
+	}
+
+	@Override
+	public List<RoomType> findAllByTypeName(Optional<String> name) {
+		return rdao.findAllByTypeName(name);
 	}
 }

@@ -1,5 +1,5 @@
 
-<body id="page-top" ng-app="roomtype-app" ng-controller="roomtype-ctrl">
+<body>
 	<!-- Content -->
 	<div class="ps-3 pe-3">
 		<div class="w-100"
@@ -11,9 +11,9 @@
 						sách loại phòng</a>
 					<form class="d-flex" role="search" style="margin-right: 50px;">
 						<input class="form-control me-2" style="width: 400px"
-							type="search" placeholder="Nhập tên loại phòng"
-							aria-label="Search" th:value="${keyword}" name="keyword">
-						<button class="btn btn-outline-light" type="submit">Search</button>
+							type="search"  placeholder="Nhập tên loại phòng"
+							aria-label="Search" name="keyword" ng-model="find">
+						<button class="btn btn-outline-light" type="submit"  ng-click="findRT(find)">Search</button>
 					</form>
 				</div>
 			</nav>
