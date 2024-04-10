@@ -46,7 +46,7 @@ public class RoomTypeController {
 	    model.addAttribute("currentPage", page);
 	    model.addAttribute("totalPages", RTpage.getTotalPages());
 		model.addAttribute("keyword", keyword);
-		return "admin/roomtype";
+		return "admin/roomtype/roomtype_index";
 	}
 
 	@RequestMapping("/roomtype/save")

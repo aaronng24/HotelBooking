@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body id="page-top">
+	<!-- Content -->
+	<div class="ps-3 pe-3">
+		<div class="w-100" style="height: auto;">
+			<div class="col-6">
+				<h4 class="fw-bold">THÔNG TIN LOẠI PHÒNG</h4>
+			</div>
+			<div class="row p-4 m-4 mt-4"
+				style="background-color: white; border-radius: 15px;">
+				<form class="row g-3" 
+					 method="post">
+					<div class="col-md-6">
+						<label for="typeID" class="form-label fw-bold">Type ID:</label> <input
+							class="form-control" ng-model="form.typeid" />
+					</div>
+					<div class="col-md-6">
+						<label for="typeName" class="form-label fw-bold">Type
+							Name: </label> <input class="form-control" ng-model="form.typeName" />
+					</div>
+					<div class="col-md-4">
+						<label for="inputPrice" class="form-label fw-bold">Price:
+						</label> <input class="form-control" ng-model="form.price" />
+					</div>
+					<div class="col-md-4">
+						<label for="inputState" class="form-label fw-bold">Capacity</label><br>
+						<!-- <div th:each="capacity : ${capacities}">
+							<input type="radio" th:field="*{capacity}" th:value="${capacity}"
+								th:id="${'capacity_' + capacity}" class="form-check-inline ms-3" />
+							<label th:for="${'capacity_' + capacity}" th:text="${capacity}"></label>
+						</div> -->
+						<select ng-model="form.capacity" class="form-control">
+							<option ng-value="1">1</option>
+							<option ng-value="2">2</option>
+							<option ng-value="3">3</option>
+							<option ng-value="4">4</option>
+							<option ng-value="5">5</option>
+							<option ng-value="6">6</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="form-label fw-bold">Image:</label> <input
+								name="attach" type="file"  class="form-control">
+						</div>
+					</div>
+					<div class="col-12">
+						<label for="description" class="form-label fw-bold">Description:
+						</label>
+						<textarea class="form-control" rows="4" cols="30"
+							ng-model="form.description"></textarea>
+					</div>
+
+					<div class="col-12">
+						<button type="submit" class="btn btn-primary float-end" ng-click="create()">Save</button>
+						<button class="btn btn-danger float-end me-2" ng-click="delete(form)">Delete</button>
+						<button type="reset" class="btn btn-secondary float-end me-2" ng-click="reset()">Reset</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

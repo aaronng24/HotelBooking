@@ -23,4 +23,15 @@ public class RoomTypeRestServiceImpl implements RoomTyperRestService {
 	public RoomType findById(String id) {
 		return rdao.findById(id).get();
 	}
+
+	@Override
+	public RoomType create(RoomType roomtype) {
+		return rdao.save(roomtype);
+	}
+
+	@Override
+	public void delete(String id) {
+		rdao.deleteById(id);
+		
+	}
 }

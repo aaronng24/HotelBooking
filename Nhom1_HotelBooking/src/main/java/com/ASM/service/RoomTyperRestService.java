@@ -10,4 +10,8 @@ public interface RoomTyperRestService {
 
 	RoomType findById(String id);
 
+	RoomType create(RoomType roomtype);
+
+	void delete(String id);
+
 }
