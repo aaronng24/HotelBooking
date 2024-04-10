@@ -44,7 +44,7 @@ public class SignupController {
 			model.addAttribute("error", "Email đã được sử dụng!");
 			return "user/signUp";
 		}
-		Account account = new Account(password, false, user);
+		Account account = new Account(password,"USER", user);
 		session.set("newAcc", account);
 		session.set("newUser", user);
 

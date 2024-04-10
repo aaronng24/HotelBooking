@@ -32,7 +32,7 @@ public class loginAdminController {
 			@RequestParam("password") String password) {
 		try {
 			Account acc = accDao.findByEmailJPQL(email);
-			if (acc==null || !acc.getPassword().equals(password) || acc.isRole()==false) {
+			if (acc==null || !acc.getPassword().equals(password) || acc.getRole()!="ADMIN") {
 				model.addAttribute("message", "Invalid username or password!");
 				return "admin/loginad";
 			} else {

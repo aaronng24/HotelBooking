@@ -72,14 +72,12 @@ public class AdminController {
 	    return new ModelAndView("admin/index", "error", ex.getMessage());
 	}
 	
-	@GetMapping("/logout")
-	public String accountLogout() {
-		User userLogin = (User) sessionService.get("user");
-		if (userLogin != null)
-			sessionService.set("user", null);
-			sessionService.set("useracc", null);
-		return "redirect:/home";
-	}
+	/*
+	 * @GetMapping("/logout") public String accountLogout() { User userLogin =
+	 * (User) sessionService.get("user"); if (userLogin != null)
+	 * sessionService.set("user", null); sessionService.set("useracc", null); return
+	 * "redirect:/home"; }
+	 */
 	
 	@RequestMapping("/thongke-theoKS")
 	public String thongKeDoanhThuTheoKS(Model model,@RequestParam(required = false,name="hotelName")String hotelID) {

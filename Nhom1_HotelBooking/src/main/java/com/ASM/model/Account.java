@@ -21,10 +21,10 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	String password;
-	boolean role;
+	String role;
 	@OneToOne @JoinColumn(name = "email")
 	User user;
-	public Account(String password, boolean role, User user) {
+	public Account(String password, String role, User user) {
 		super();
 		this.password = password;
 		this.role = role;
